@@ -1,0 +1,12 @@
+NXP Software Content Register
+
+Package:                   rd-motion-control-slave-servo-imxrt1180
+Version:                   1.0
+Outgoing License:          LA_OPT_Online Code Hosting NXP_Software_License - v1.2 October 2023 
+License File:              LICENSE.txt
+Description and comments:  This application demonstrates how to implement EtherCAT+ dual PMSM motor control on the iMX.RT family of MCUs. 
+Release Location:          https://github.com/nxp-appcodehub/rd-motion-control-slave-servo-imxrt1180
+Origin:                    NXP  (proprietary)
+                           NXP (BSD-3-Clause)
+                           ARM CMSIS 5.8.0(Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0                         
+                             

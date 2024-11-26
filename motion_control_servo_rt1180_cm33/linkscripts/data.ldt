@@ -1,0 +1,10 @@
+<#if memory.alias=="RAM">
+ . = ALIGN(512);
+ KEEP(*(.isr_vector_ram))
+*(.text*)
+*(.rodata .rodata.* .constdata .constdata.*) 
+. = ALIGN(${text_align}); 
+*(.data*) 
+ 
+</#if>
+ 

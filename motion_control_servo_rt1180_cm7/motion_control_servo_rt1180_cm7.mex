@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="MIMXRT1189xxxxx" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_14 http://mcuxpresso.nxp.com/XSD/mex_configuration_14.xsd" uuid="83f034d8-6e2f-406b-a873-ef4ce6939c51" version="14" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_14" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>MIMXRT1189xxxxx</processor>
+      <package>MIMXRT1189CVM8B</package>
+      <mcu_data>ksdk2_0</mcu_data>
+      <cores selected="cm7">
+         <core name="Cortex-M33" id="cm33" description=""/>
+         <core name="Cortex-M7F" id="cm7" description=""/>
+      </cores>
+      <description></description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <custom_copyright>
+         <text>/*
+* Copyright 2024 NXP
+*
+* SPDX-License-Identifier: BSD-3-Clause
+*/</text>
+         <enabled>true</enabled>
+      </custom_copyright>
+      <update_include_paths>true</update_include_paths>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="14.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>0.14.12</processor_version>
+            <pin_labels>
+               <pin_label pin_num="K15" pin_signal="GPIO_AD_21" label="M2_UDC" identifier="CUR_A;CUR_A2;M2_UDC"/>
+               <pin_label pin_num="K12" pin_signal="GPIO_AD_22" label="M1_IDC" identifier="CUR_C;M1_IDC"/>
+               <pin_label pin_num="N15" pin_signal="GPIO_AD_13" label="M2_IB" identifier="TP1;M2_IB"/>
+               <pin_label pin_num="P17" pin_signal="GPIO_AD_12" label="TP119" identifier="TP2;M2_IA;TP119"/>
+               <pin_label pin_num="B4" pin_signal="GPIO_AON_04" label="SW8" identifier="SW8"/>
+               <pin_label pin_num="K3" pin_signal="GPIO_EMC_B1_06" label="USER_LED0" identifier="USER_LED0"/>
+               <pin_label pin_num="M3" pin_signal="GPIO_EMC_B1_07" label="USER_LED1" identifier="USER_LED1"/>
+               <pin_label pin_num="H5" pin_signal="GPIO_EMC_B1_08" label="USER_LED2" identifier="USER_LED2"/>
+               <pin_label pin_num="E1" pin_signal="GPIO_EMC_B1_09" label="USER_LED3" identifier="USER_LED3"/>
+               <pin_label pin_num="G6" pin_signal="GPIO_EMC_B1_12" label="M1_PWM_A0" identifier="M1_PWM_A0"/>
+               <pin_label pin_num="F3" pin_signal="GPIO_EMC_B1_13" label="M1_PWM_B0" identifier="M1_PWM_B0"/>
+               <pin_label pin_num="G5" pin_signal="GPIO_EMC_B1_14" label="M1_PWM_A1" identifier="M1_PWM_A1"/>
+               <pin_label pin_num="G2" pin_signal="GPIO_EMC_B1_15" label="M1_PWM_B1" identifier="M1_PWM_B1"/>
+               <pin_label pin_num="E2" pin_signal="GPIO_EMC_B1_17" label="M1_PWM_A2" identifier="M1_PWM_A2"/>
+               <pin_label pin_num="H1" pin_signal="GPIO_EMC_B1_16" label="M1_PWM_B2" identifier="M1_PWM_B2"/>
+               <pin_label pin_num="D1" pin_signal="GPIO_EMC_B1_18" label="M2_PWM_A0" identifier="M2_PWM_A0"/>
+               <pin_label pin_num="F4" pin_signal="GPIO_EMC_B1_19" label="M2_PWM_B0" identifier="M2_PWM_B0"/>
+               <pin_label pin_num="G1" pin_signal="GPIO_EMC_B1_20" label="M2_PWM_A1" identifier="M2_PWM_A1"/>
+               <pin_label pin_num="K4" pin_signal="GPIO_EMC_B1_21" label="M2_PWM_B1" identifier="M2_PWM_B1"/>
+               <pin_label pin_num="F1" pin_signal="GPIO_EMC_B1_23" label="M2_PWM_A2" identifier="M2_PWM_A2"/>
+               <pin_label pin_num="L3" pin_signal="GPIO_EMC_B1_22" label="M2_PWM_B2" identifier="M2_PWM_B2"/>
+               <pin_label pin_num="N14" pin_signal="GPIO_AD_14" label="M1_IA" identifier="M1_IA"/>
+               <pin_label pin_num="N16" pin_signal="GPIO_AD_15" label="M1_IB" identifier="M1_IB"/>
+               <pin_label pin_num="K16" pin_signal="GPIO_AD_18" label="M1_IC" identifier="M1_IC"/>
+               <pin_label pin_num="L13" pin_signal="GPIO_AD_19" label="M1_UDC" identifier="M1_UDC"/>
+               <pin_label pin_num="K13" pin_signal="GPIO_AD_20" label="M2_IC" identifier="M2_IC"/>
+               <pin_label pin_num="K14" pin_signal="GPIO_AD_23" label="M2_IDC" identifier="M2_IDC"/>
+               <pin_label pin_num="B15" pin_signal="GPIO_SD_B1_04" label="M1_GD3000_RESET" identifier="M1_GD3000_RESET"/>
+               <pin_label pin_num="A16" pin_signal="GPIO_SD_B1_05" label="M1_GD3000_EN" identifier="M1_GD3000_EN"/>
+               <pin_label pin_num="D5" pin_signal="GPIO_AON_19" label="M2_GD3000_RESET" identifier="M2_GD3000_RESET"/>
+               <pin_label pin_num="E5" pin_signal="GPIO_AON_20" label="M2_GD3000_EN" identifier="M2_GD3000_EN"/>
+               <pin_label pin_num="H3" pin_signal="GPIO_EMC_B1_00" label="M1_FAULT_OV" identifier="M1_FAULT_OC;M1_FAULT_OV"/>
+               <pin_label pin_num="H4" pin_signal="GPIO_EMC_B1_01" label="M1_FAULT_OC" identifier="M1_FAULT_OC"/>
+               <pin_label pin_num="N4" pin_signal="GPIO_EMC_B1_26" label="M1_FAULT_OT" identifier="M1_FAULT_OT"/>
+               <pin_label pin_num="B13" pin_signal="GPIO_B1_04" label="M2_FAULT_OV" identifier="M2_FAULT_OV"/>
+               <pin_label pin_num="J4" pin_signal="GPIO_EMC_B1_04" label="M2_FAULT_OV" identifier="M2_FAULT_OV"/>
+               <pin_label pin_num="H6" pin_signal="GPIO_EMC_B1_05" label="M2_FAULT_OC" identifier="M2_FAULT_OC"/>
+               <pin_label pin_num="E9" pin_signal="GPIO_B2_00" label="TP150" identifier="TP150"/>
+               <pin_label pin_num="E10" pin_signal="GPIO_B2_01" label="TP151" identifier="TP151"/>
+               <pin_label pin_num="F2" pin_signal="GPIO_EMC_B1_11" label="M2_485" identifier="M1_485;M2_485"/>
+               <pin_label pin_num="E3" pin_signal="GPIO_EMC_B1_10" label="M1_485" identifier="M2_485;M1_485"/>
+            </pin_labels>
+            <power_domains/>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.rgpio" description="Pins initialization requires the RGPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="RGPIO2" signal="gpio_io, 06" pin_num="K3" pin_signal="GPIO_EMC_B1_06">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO2" signal="gpio_io, 07" pin_num="M3" pin_signal="GPIO_EMC_B1_07">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO2" signal="gpio_io, 09" pin_num="E1" pin_signal="GPIO_EMC_B1_09">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO6" signal="gpio_io, 14" pin_num="E9" pin_signal="GPIO_B2_00">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO6" signal="gpio_io, 15" pin_num="E10" pin_signal="GPIO_B2_01">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitADC">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="ADC1" description="Peripheral ADC1 is not initialized" problem_level="1" source="Pins:BOARD_InitADC">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="ADC2" description="Peripheral ADC2 is not initialized" problem_level="1" source="Pins:BOARD_InitADC">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitADC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitADC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:BOARD_InitADC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="ADC1" signal="HW_TRIG, 0" pin_num="" pin_signal="FLEXPWM4_PWM1_OUT_TRIG0_1"/>
+                  <pin peripheral="ADC1" signal="A, 1_1" pin_num="N14" pin_signal="GPIO_AD_14">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC1" signal="B, 1_1" pin_num="N16" pin_signal="GPIO_AD_15">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC1" signal="A, 1_2" pin_num="P17" pin_signal="GPIO_AD_12">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M2_IA"/>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC1" signal="B, 1_2" pin_num="N15" pin_signal="GPIO_AD_13">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M2_IB"/>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="A, 2_0" pin_num="K16" pin_signal="GPIO_AD_18">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="B, 2_0" pin_num="L13" pin_signal="GPIO_AD_19">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="A, 2_2" pin_num="K12" pin_signal="GPIO_AD_22">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M1_IDC"/>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="A, 2_1" pin_num="K13" pin_signal="GPIO_AD_20">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="B, 2_1" pin_num="K15" pin_signal="GPIO_AD_21">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M2_UDC"/>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC2" signal="B, 2_2" pin_num="K14" pin_signal="GPIO_AD_23">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC1" signal="HW_TRIG, 1" pin_num="" pin_signal="FLEXPWM2_PWM1_OUT_TRIG0_1"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitPWM">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="PWM4" description="Peripheral PWM4 is not initialized" problem_level="1" source="Pins:BOARD_InitPWM">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="PWM2" description="Peripheral PWM2 is not initialized" problem_level="1" source="Pins:BOARD_InitPWM">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPWM">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitPWM">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:BOARD_InitPWM">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="PWM4" signal="A, 0" pin_num="G6" pin_signal="GPIO_EMC_B1_12"/>
+                  <pin peripheral="PWM4" signal="B, 0" pin_num="F3" pin_signal="GPIO_EMC_B1_13"/>
+                  <pin peripheral="PWM4" signal="A, 1" pin_num="G5" pin_signal="GPIO_EMC_B1_14"/>
+                  <pin peripheral="PWM4" signal="B, 1" pin_num="G2" pin_signal="GPIO_EMC_B1_15"/>
+                  <pin peripheral="PWM4" signal="A, 2" pin_num="E2" pin_signal="GPIO_EMC_B1_17"/>
+                  <pin peripheral="PWM4" signal="B, 2" pin_num="H1" pin_signal="GPIO_EMC_B1_16"/>
+                  <pin peripheral="PWM2" signal="A, 0" pin_num="D1" pin_signal="GPIO_EMC_B1_18"/>
+                  <pin peripheral="PWM2" signal="B, 0" pin_num="F4" pin_signal="GPIO_EMC_B1_19"/>
+                  <pin peripheral="PWM2" signal="A, 1" pin_num="G1" pin_signal="GPIO_EMC_B1_20"/>
+                  <pin peripheral="PWM2" signal="B, 1" pin_num="K4" pin_signal="GPIO_EMC_B1_21"/>
+                  <pin peripheral="PWM2" signal="A, 2" pin_num="F1" pin_signal="GPIO_EMC_B1_23"/>
+                  <pin peripheral="PWM2" signal="B, 2" pin_num="L3" pin_signal="GPIO_EMC_B1_22"/>
+                  <pin peripheral="PWM4" signal="FAULT, 0" pin_num="H3" pin_signal="GPIO_EMC_B1_00">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M1_FAULT_OV"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="PWM4" signal="FAULT, 1" pin_num="H4" pin_signal="GPIO_EMC_B1_01"/>
+                  <pin peripheral="PWM4" signal="FAULT, 2" pin_num="N4" pin_signal="GPIO_EMC_B1_26"/>
+                  <pin peripheral="PWM2" signal="FAULT, 0" pin_num="J4" pin_signal="GPIO_EMC_B1_04"/>
+                  <pin peripheral="PWM2" signal="FAULT, 1" pin_num="H6" pin_signal="GPIO_EMC_B1_05"/>
+                  <pin peripheral="PWM2" signal="EXT_SYNC, 0" pin_num="" pin_signal="FLEXPWM4_PWM0_OUT_TRIG0_1"/>
+                  <pin peripheral="PWM2" signal="EXT_SYNC, 1" pin_num="" pin_signal="FLEXPWM4_PWM0_OUT_TRIG0_1"/>
+                  <pin peripheral="PWM2" signal="EXT_SYNC, 2" pin_num="" pin_signal="FLEXPWM4_PWM0_OUT_TRIG0_1"/>
+                  <pin peripheral="PWM4" signal="FORCE" pin_num="" pin_signal="ECAT_SYNC_OUT0"/>
+                  <pin peripheral="PWM2" signal="EXT_SYNC, 3" pin_num="" pin_signal="FLEXPWM4_PWM0_OUT_TRIG0_1"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitLPUART">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART1" description="Peripheral LPUART1 is not initialized" problem_level="1" source="Pins:BOARD_InitLPUART">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitLPUART">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitLPUART">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART1" signal="RXD" pin_num="A5" pin_signal="GPIO_AON_09">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPUART1" signal="TXD" pin_num="B1" pin_signal="GPIO_AON_08">
+                     <pin_features>
+                        <pin_feature name="pull_keeper_select" value="Keeper"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitENC">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="EQDC1" description="Peripheral EQDC1 is not initialized" problem_level="1" source="Pins:BOARD_InitENC">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="EQDC2" description="Peripheral EQDC2 is not initialized" problem_level="1" source="Pins:BOARD_InitENC">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitENC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitENC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:BOARD_InitENC">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="EQDC1" signal="PHASE, A" pin_num="F5" pin_signal="GPIO_EMC_B1_28"/>
+                  <pin peripheral="EQDC1" signal="PHASE, B" pin_num="E4" pin_signal="GPIO_EMC_B1_29"/>
+                  <pin peripheral="EQDC1" signal="INDEX" pin_num="N5" pin_signal="GPIO_EMC_B2_00"/>
+                  <pin peripheral="EQDC1" signal="CAP, 1" pin_num="N5" pin_signal="GPIO_EMC_B2_00"/>
+                  <pin peripheral="EQDC2" signal="PHASE, A" pin_num="T5" pin_signal="GPIO_EMC_B2_03"/>
+                  <pin peripheral="EQDC2" signal="PHASE, B" pin_num="P5" pin_signal="GPIO_EMC_B2_02"/>
+                  <pin peripheral="EQDC2" signal="INDEX" pin_num="R2" pin_signal="GPIO_EMC_B2_01"/>
+                  <pin peripheral="EQDC2" signal="CAP, 1" pin_num="R2" pin_signal="GPIO_EMC_B2_01"/>
+               </pins>
+            </function>
+            <function name="BOARD_InitCMP">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitCMP">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins/>
+            </function>
+            <function name="BOARD_InitLPSPI3">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPSPI3" description="Peripheral LPSPI3 is not initialized" problem_level="1" source="Pins:BOARD_InitLPSPI3">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI3">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI3">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.rgpio" description="Pins initialization requires the RGPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI3">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPSPI3" signal="PCS0" pin_num="B16" pin_signal="GPIO_SD_B1_00"/>
+                  <pin peripheral="LPSPI3" signal="SCK" pin_num="D15" pin_signal="GPIO_SD_B1_01"/>
+                  <pin peripheral="LPSPI3" signal="SOUT" pin_num="D14" pin_signal="GPIO_SD_B1_02"/>
+                  <pin peripheral="LPSPI3" signal="SIN" pin_num="C15" pin_signal="GPIO_SD_B1_03"/>
+                  <pin peripheral="RGPIO5" signal="gpio_io, 08" pin_num="B15" pin_signal="GPIO_SD_B1_04">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                        <pin_feature name="pull_down_pull_up_config" value="Pull_Forbidden"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO5" signal="gpio_io, 09" pin_num="A16" pin_signal="GPIO_SD_B1_05">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="false"/>
+                        <pin_feature name="pull_down_pull_up_config" value="Pull_Forbidden"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_InitLPSPI2">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPSPI2" description="Peripheral LPSPI2 is not initialized" problem_level="1" source="Pins:BOARD_InitLPSPI2">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.rgpio" description="Pins initialization requires the RGPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitLPSPI2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPSPI2" signal="PCS0" pin_num="D2" pin_signal="GPIO_AON_25"/>
+                  <pin peripheral="LPSPI2" signal="SCK" pin_num="C3" pin_signal="GPIO_AON_22"/>
+                  <pin peripheral="LPSPI2" signal="SIN" pin_num="C1" pin_signal="GPIO_AON_24"/>
+                  <pin peripheral="LPSPI2" signal="SOUT" pin_num="C2" pin_signal="GPIO_AON_23"/>
+                  <pin peripheral="RGPIO1" signal="gpio_io, 19" pin_num="D5" pin_signal="GPIO_AON_19">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="RGPIO1" signal="gpio_io, 20" pin_num="E5" pin_signal="GPIO_AON_20">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="false"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="SINC_Motor1">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="SINC1" description="Peripheral SINC1 is not initialized" problem_level="1" source="Pins:SINC_Motor1">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:SINC_Motor1">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:SINC_Motor1">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:SINC_Motor1">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="SINC1" signal="MOD_CLK, 0" pin_num="N12" pin_signal="GPIO_AD_00"/>
+                  <pin peripheral="SINC1" signal="MOD_CLK, 1" pin_num="R14" pin_signal="GPIO_AD_01"/>
+                  <pin peripheral="SINC1" signal="MOD_CLK, 2" pin_num="R13" pin_signal="GPIO_AD_02"/>
+                  <pin peripheral="SINC1" signal="EMCLK, 0" pin_num="R15" pin_signal="GPIO_AD_03"/>
+                  <pin peripheral="SINC1" signal="EMBIT, 0" pin_num="P15" pin_signal="GPIO_AD_04"/>
+                  <pin peripheral="SINC1" signal="EMCLK, 1" pin_num="P13" pin_signal="GPIO_AD_05"/>
+                  <pin peripheral="SINC1" signal="EMBIT, 1" pin_num="N13" pin_signal="GPIO_AD_06"/>
+                  <pin peripheral="SINC1" signal="EMCLK, 2" pin_num="T17" pin_signal="GPIO_AD_07"/>
+                  <pin peripheral="SINC1" signal="EMBIT, 2" pin_num="T14" pin_signal="GPIO_AD_08"/>
+                  <pin peripheral="SINC1" signal="EMCLK, 3" pin_num="R16" pin_signal="GPIO_AD_09"/>
+                  <pin peripheral="SINC1" signal="EMBIT, 3" pin_num="R17" pin_signal="GPIO_AD_10"/>
+                  <pin peripheral="SINC1" signal="EXT_TRIG, 0" pin_num="" pin_signal="FLEXPWM4_PWM2_OUT_TRIG0_1"/>
+                  <pin peripheral="SINC1" signal="sinc_break" pin_num="P16" pin_signal="GPIO_AD_11"/>
+               </pins>
+            </function>
+            <function name="SINC_Motor2">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="SINC2" description="Peripheral SINC2 is not initialized" problem_level="1" source="Pins:SINC_Motor2">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:SINC_Motor2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:SINC_Motor2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:SINC_Motor2">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="SINC2" signal="EMCLK, 0" pin_num="M14" pin_signal="GPIO_AD_26"/>
+                  <pin peripheral="SINC2" signal="EMBIT, 0" pin_num="M16" pin_signal="GPIO_AD_27"/>
+                  <pin peripheral="SINC2" signal="EMCLK, 1" pin_num="L16" pin_signal="GPIO_AD_28"/>
+                  <pin peripheral="SINC2" signal="EMBIT, 1" pin_num="L15" pin_signal="GPIO_AD_29"/>
+                  <pin peripheral="SINC2" signal="EMCLK, 2" pin_num="L17" pin_signal="GPIO_AD_30"/>
+                  <pin peripheral="SINC2" signal="EMBIT, 2" pin_num="K17" pin_signal="GPIO_AD_31"/>
+                  <pin peripheral="SINC2" signal="EMCLK, 3" pin_num="J17" pin_signal="GPIO_AD_32"/>
+                  <pin peripheral="SINC2" signal="EMBIT, 3" pin_num="J16" pin_signal="GPIO_AD_33"/>
+                  <pin peripheral="SINC2" signal="EXT_TRIG, 1" pin_num="" pin_signal="FLEXPWM4_PWM2_OUT_TRIG0_1"/>
+                  <pin peripheral="SINC2" signal="MOD_CLK, 0" pin_num="H17" pin_signal="GPIO_AD_35"/>
+                  <pin peripheral="SINC2" signal="MOD_CLK, 1" pin_num="M13" pin_signal="GPIO_AD_24"/>
+                  <pin peripheral="SINC2" signal="MOD_CLK, 2" pin_num="M15" pin_signal="GPIO_AD_25"/>
+               </pins>
+            </function>
+            <function name="BOARD_UART5">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART5" description="Peripheral LPUART5 is not initialized" problem_level="1" source="Pins:BOARD_UART5">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UART5">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_UART5">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.rgpio" description="Pins initialization requires the RGPIO Driver in the project." problem_level="2" source="Pins:BOARD_UART5">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART5" signal="RXD" pin_num="F16" pin_signal="GPIO_SD_B2_09"/>
+                  <pin peripheral="LPUART5" signal="TXD" pin_num="F14" pin_signal="GPIO_SD_B2_08"/>
+                  <pin peripheral="RGPIO2" signal="gpio_io, 10" pin_num="E3" pin_signal="GPIO_EMC_B1_10">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M1_485"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="BOARD_UART8">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART8" description="Peripheral LPUART8 is not initialized" problem_level="1" source="Pins:BOARD_UART8">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_UART8">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_UART8">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.rgpio" description="Pins initialization requires the RGPIO Driver in the project." problem_level="2" source="Pins:BOARD_UART8">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART8" signal="RXD" pin_num="H14" pin_signal="GPIO_SD_B2_01"/>
+                  <pin peripheral="LPUART8" signal="TXD" pin_num="H15" pin_signal="GPIO_SD_B2_00"/>
+                  <pin peripheral="RGPIO2" signal="gpio_io, 11" pin_num="F2" pin_signal="GPIO_EMC_B1_11">
+                     <pin_features>
+                        <pin_feature name="identifier" value="M2_485"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+            <function name="M7_DebugConsole">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="LPUART3" description="Peripheral LPUART3 is not initialized" problem_level="1" source="Pins:M7_DebugConsole">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:M7_DebugConsole">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:M7_DebugConsole">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LPUART3" signal="RXD" pin_num="K2" pin_signal="GPIO_EMC_B1_02"/>
+                  <pin peripheral="LPUART3" signal="TXD" pin_num="G3" pin_signal="GPIO_EMC_B1_03"/>
+               </pins>
+            </function>
+            <function name="SLOWLOOP_TRIGGER">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>cm7</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="TMR1" description="Peripheral TMR1 is not initialized" problem_level="1" source="Pins:SLOWLOOP_TRIGGER">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:SLOWLOOP_TRIGGER">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.xbar_1" description="Pins initialization requires the XBAR_1 Driver in the project." problem_level="2" source="Pins:SLOWLOOP_TRIGGER">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="TMR1" signal="TIMER_INPUT, 0" pin_num="" pin_signal="ECAT_SYNC_OUT0"/>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="12.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/clock_config.c" update_enabled="true"/>
+            <file path="board/clock_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>0.14.12</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="BOARD_BootClockRUN" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.xtali" description="&apos;XTALI&apos; (Pins tool id: ANADIG.xtali, Clocks tool id: ANADIG_OSC.XTALI) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.xtali" description="&apos;XTALI&apos; (Pins tool id: ANADIG.xtali, Clocks tool id: ANADIG_OSC.XTALI) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.xtalo" description="&apos;XTALO&apos; (Pins tool id: ANADIG.xtalo, Clocks tool id: ANADIG_OSC.XTALO) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.xtalo" description="&apos;XTALO&apos; (Pins tool id: ANADIG.xtalo, Clocks tool id: ANADIG_OSC.XTALO) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.rtc_xtali" description="&apos;RTC_XTALI&apos; (Pins tool id: ANADIG.rtc_xtali, Clocks tool id: ANADIG_OSC.RTC_XTALI) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.rtc_xtali" description="&apos;RTC_XTALI&apos; (Pins tool id: ANADIG.rtc_xtali, Clocks tool id: ANADIG_OSC.RTC_XTALI) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.rtc_xtalo" description="&apos;RTC_XTALO&apos; (Pins tool id: ANADIG.rtc_xtalo, Clocks tool id: ANADIG_OSC.RTC_XTALO) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ANADIG.rtc_xtalo" description="&apos;RTC_XTALO&apos; (Pins tool id: ANADIG.rtc_xtalo, Clocks tool id: ANADIG_OSC.RTC_XTALO) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ECAT.ecat_pt0_tx_clk" description="&apos;ECAT_PORT0_REF_CLK&apos; (Pins tool id: ECAT.ecat_pt0_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.ECAT_PORT0_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ECAT.ecat_pt1_tx_clk" description="&apos;ECAT_PORT1_REF_CLK&apos; (Pins tool id: ECAT.ecat_pt1_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.ECAT_PORT1_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ETH.eth_tx_clk" description="&apos;NETC_PORT0_REF_CLK&apos; (Pins tool id: ETH.eth_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.NETC_PORT0_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ETH.eth_tx_clk" description="&apos;NETC_PORT1_REF_CLK&apos; (Pins tool id: ETH.eth_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.NETC_PORT1_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ETH.eth_tx_clk" description="&apos;NETC_PORT2_REF_CLK&apos; (Pins tool id: ETH.eth_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.NETC_PORT2_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ETH.eth_tx_clk" description="&apos;NETC_PORT3_REF_CLK&apos; (Pins tool id: ETH.eth_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.NETC_PORT3_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ETH.eth_tx_clk" description="&apos;NETC_PORT4_REF_CLK&apos; (Pins tool id: ETH.eth_tx_clk, Clocks tool id: BLK_CTRL_WAKEUPMIX.NETC_PORT4_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="ENETC.enetc_clk_in" description="&apos;TMR_1588_REF_CLK&apos; (Pins tool id: ENETC.enetc_clk_in, Clocks tool id: BLK_CTRL_WAKEUPMIX.TMR_1588_REF_CLK_EXT_PIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.misc" description="Clocks initialization requires the MISC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.misc" description="Clocks initialization requires the MISC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.dcdc_soc" description="Clocks initialization requires the DCDC_SOC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.dcdc_soc" description="Clocks initialization requires the DCDC_SOC Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.pmu_1" description="Clocks initialization requires the PMU_1 Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.pmu_1" description="Clocks initialization requires the PMU_1 Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm33">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="cm7">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.ECAT_PORT0_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.ECAT_PORT1_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.NETC_PORT0_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.NETC_PORT1_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.NETC_PORT2_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.NETC_PORT3_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.NETC_PORT4_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.SAI1_MCLK_EXT.outFreq" value="100 kHz" locked="false" enabled="false"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.SAI2_MCLK_EXT.outFreq" value="200 kHz" locked="false" enabled="false"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.SAI3_MCLK_EXT.outFreq" value="300 kHz" locked="false" enabled="false"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.SAI4_MCLK_EXT.outFreq" value="400 kHz" locked="false" enabled="false"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.SPDIF_CLK_EXT.outFreq" value="2 MHz" locked="false" enabled="false"/>
+                  <clock_source id="BLK_CTRL_WAKEUPMIX.TMR_1588_REF_CLK_EXT.outFreq" value="50 MHz" locked="false" enabled="true"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="ACMP_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ADC1_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ADC2_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ARM_PLL_CLK.outFreq" value="798 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ASRC_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="BUS_AON_CLK_ROOT.outFreq" value="132 MHz" locked="false" accuracy=""/>
+                  <clock_output id="BUS_WAKEUP_CLK_ROOT.outFreq" value="132 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CAN1_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CAN2_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CAN3_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CCM_CKO1_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CCM_CKO2_CLK_ROOT.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLK_1M.outFreq" value="1 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ECAT_CLK_ROOT.outFreq" value="100 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ECAT_PORT0_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ECAT_PORT1_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDGELOCK_CLK_ROOT.outFreq" value="200 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ENET_REFCLK_ROOT.outFreq" value="125 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXIO1_CLK_ROOT.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXIO2_CLK_ROOT.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXSPI1_CLK_ROOT.outFreq" value="1440/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXSPI2_CLK_ROOT.outFreq" value="1440/13 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXSPI_SLV_CLK_ROOT.outFreq" value="132 MHz" locked="false" accuracy=""/>
+                  <clock_output id="GPT1_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="GPT2_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="I3C1_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="I3C2_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C0102_CLK_ROOT.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C0304_CLK_ROOT.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C0506_CLK_ROOT.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPIT3_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI0102_CLK_ROOT.outFreq" value="1440/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI0304_CLK_ROOT.outFreq" value="1440/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI0506_CLK_ROOT.outFreq" value="1440/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPTMR1_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPTMR2_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPTMR3_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0102_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0304_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0506_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0708_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0910_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART1112_CLK_ROOT.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="M33_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="M33_SYSTICK_CLK_ROOT.outFreq" value="100 kHz" locked="false" accuracy=""/>
+                  <clock_output id="M7_CLK_ROOT.outFreq" value="798 MHz" locked="true" accuracy="0.001"/>
+                  <clock_output id="M7_SYSTICK_CLK_ROOT.outFreq" value="100 kHz" locked="false" accuracy=""/>
+                  <clock_output id="MAC0_CLK_ROOT.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAC1_CLK_ROOT.outFreq" value="125 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAC2_CLK_ROOT.outFreq" value="125 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAC3_CLK_ROOT.outFreq" value="125 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MAC4_CLK_ROOT.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MIC_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_PORT0_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_PORT1_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_PORT2_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_PORT3_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="NETC_PORT4_REF_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="OSC_24M.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="OSC_32K.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="OSC_RC_24M.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="OSC_RC_400M.outFreq" value="400 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SEMC_CLK_ROOT.outFreq" value="200 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SWO_TRACE_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL1_CLK.outFreq" value="1 GHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL1_DIV2_CLK.outFreq" value="500 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL1_DIV5_CLK.outFreq" value="200 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL2_CLK.outFreq" value="528 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL2_PFD0_CLK.outFreq" value="352 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL2_PFD1_CLK.outFreq" value="594 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL2_PFD2_CLK.outFreq" value="396 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL2_PFD3_CLK.outFreq" value="297 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_CLK.outFreq" value="480 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_DIV2_CLK.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_PFD0_CLK.outFreq" value="4320/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_PFD1_CLK.outFreq" value="2880/11 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_PFD2_CLK.outFreq" value="4320/13 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_PLL3_PFD3_CLK.outFreq" value="480 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TMR_1588_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TMR_1588_REF_CLK.outFreq" value="240 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TPM2_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TPM4_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TPM5_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TPM6_CLK_ROOT.outFreq" value="80 MHz" locked="false" accuracy=""/>
+                  <clock_output id="USDHC1_CLK_ROOT.outFreq" value="198 MHz" locked="false" accuracy=""/>
+                  <clock_output id="USDHC2_CLK_ROOT.outFreq" value="396 MHz" locked="false" accuracy=""/>
+                  <clock_output id="WAKEUP_AXI_CLK_ROOT.outFreq" value="240 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="AONDomainVoltage" value="OD" locked="false"/>
+                  <setting id="SOCDomainVoltage" value="OD" locked="false"/>
+                  <setting id="ANADIG_OSC_OSC_24M_CTRL_LP_EN_CFG" value="Low" locked="false"/>
+                  <setting id="ANADIG_OSC_OSC_24M_CTRL_OSC_EN_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL.ARM_PLL_VDIV.scale" value="133" locked="false"/>
+                  <setting id="ANADIG_PLL.PLL_AUDIO_BYPASS.sel" value="ANADIG_OSC.OSC_24M" locked="false"/>
+                  <setting id="ANADIG_PLL.SYS_PLL2.denom" value="268435455" locked="true"/>
+                  <setting id="ANADIG_PLL.SYS_PLL2.div" value="22" locked="false"/>
+                  <setting id="ANADIG_PLL.SYS_PLL2.num" value="0" locked="false"/>
+                  <setting id="ANADIG_PLL.SYS_PLL2_SS_DIV.scale" value="268435455" locked="false"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD0_DIV.scale" value="22" locked="false"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD1_DIV.scale" value="33" locked="true"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD1_MUL.scale" value="18" locked="true"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD2_DIV.scale" value="26" locked="true"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD2_MUL.scale" value="18" locked="true"/>
+                  <setting id="ANADIG_PLL.SYS_PLL3_PFD3_DIV.scale" value="18" locked="false"/>
+                  <setting id="ANADIG_PLL_ARM_PLL_CTRL_POWERUP_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL_PLL_AUDIO_CTRL_GATE_CFG" value="Disabled" locked="false"/>
+                  <setting id="ANADIG_PLL_SYS_PLL1_CTRL_SYS_PLL1_DIV2_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL_SYS_PLL1_CTRL_SYS_PLL1_DIV5_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL_SYS_PLL2_CTRL_POWERUP_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL_SYS_PLL3_CTRL_POWERUP_CFG" value="Enabled" locked="false"/>
+                  <setting id="ANADIG_PLL_SYS_PLL3_CTRL_SYS_PLL3_DIV2_CFG" value="Enabled" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT0.DIV.scale" value="1" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT0.MUX.sel" value="ANADIG_PLL.ARM_PLL_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT1.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT1.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT10.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT10.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT11.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT11.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT12.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT12.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT13.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT13.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT14.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT14.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT15.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT15.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT16.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT16.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT17.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT17.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT18.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT18.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT19.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT2.DIV.scale" value="5" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT2.MUX.sel" value="ANADIG_PLL.SYS_PLL1_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT20.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT21.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT21.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD0_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT22.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT22.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT23.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT23.MUX.sel" value="ANADIG_PLL.SYS_PLL2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT24.DIV.scale" value="6" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT24.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT25.DIV.scale" value="6" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT25.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT26.DIV.scale" value="6" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT26.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT27.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT27.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT28.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT28.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT29.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT29.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT3.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT3.MUX.sel" value="ANADIG_PLL.SYS_PLL2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT30.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT30.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT31.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT31.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT32.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT32.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT33.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT33.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT34.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT34.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT35.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT35.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT36.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT36.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD1_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT37.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT37.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD1_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT38.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT38.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD1_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT39.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT39.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT4.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT4.MUX.sel" value="ANADIG_PLL.SYS_PLL2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT40.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT40.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT41.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT41.MUX.sel" value="ANADIG_PLL.SYS_PLL2_PFD2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT42.MUX.sel" value="ANADIG_PLL.SYS_PLL2_PFD2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT43.DIV.scale" value="5" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT43.MUX.sel" value="ANADIG_PLL.SYS_PLL1_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT44.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT44.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT45.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT45.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT46.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT46.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT47.DIV.scale" value="5" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT47.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT48.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT48.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT49.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT49.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT5.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT5.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT50.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT50.MUX.sel" value="ANADIG_PLL.SYS_PLL3_PFD3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT51.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT51.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT52.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT52.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT53.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT53.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT54.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT54.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT55.DIV.scale" value="10" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT55.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT6.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT6.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT65.DIV.scale" value="12" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT65.MUX.sel" value="ANADIG_PLL.PLL_AUDIO_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT66.DIV.scale" value="12" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT66.MUX.sel" value="ANADIG_PLL.PLL_AUDIO_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT67.DIV.scale" value="12" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT67.MUX.sel" value="ANADIG_PLL.PLL_AUDIO_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT68.DIV.scale" value="12" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT68.MUX.sel" value="ANADIG_PLL.PLL_AUDIO_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT69.DIV.scale" value="12" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT69.MUX.sel" value="ANADIG_PLL.PLL_AUDIO_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT7.DIV.scale" value="240" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT7.MUX.sel" value="ANADIG_OSC.OSC_24M" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT70.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT70.MUX.sel" value="ANADIG_PLL.SYS_PLL3_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT71.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT71.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT72.DIV.scale" value="3" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT72.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT73.DIV.scale" value="4" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT73.MUX.sel" value="ANADIG_PLL.SYS_PLL1_DIV5_CLK" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT8.DIV.scale" value="240" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT8.MUX.sel" value="ANADIG_OSC.OSC_24M" locked="false"/>
+                  <setting id="CCM.CLOCK_ROOT9.DIV.scale" value="2" locked="true"/>
+                  <setting id="CCM.CLOCK_ROOT9.MUX.sel" value="ANADIG_PLL.SYS_PLL3_DIV2_CLK" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <dcdx name="DCDx" version="3.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcdx>
+      <periphs name="Peripherals" version="13.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <peripherals_profile>
+            <processor_version>N/A</processor_version>
+         </peripherals_profile>
+         <functional_groups/>
+         <components/>
+      </periphs>
+      <tee name="TEE" version="5.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <tee_profile>
+            <processor_version>N/A</processor_version>
+         </tee_profile>
+      </tee>
+   </tools>
+</configuration>

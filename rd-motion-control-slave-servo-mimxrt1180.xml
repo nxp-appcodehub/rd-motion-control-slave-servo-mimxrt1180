@@ -1,0 +1,27 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" type="ref_design" format="cmsis" versionSchema="1.0.0" name="motion control slave servo mimxrt1180" uuid="7533a014-69b2-4531-932f-1f2a2a2ea7de">
+    <display_title>
+        How to set up the motion control reference design on iMX.RT1180
+    </display_title>
+    <overview>
+        <![CDATA[This application demonstrates how to implement EtherCAT+ PMSM motor control on the iMX.RT1180. ]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+    </toolchains>
+    <families>
+        <family name="imxrt"></family>
+    </families>
+    <nxp_compatible_hw>
+        <custom_hw></custom_hw>
+    </nxp_compatible_hw>
+    <peripherals>
+        <peripheral name="adc"></peripheral>
+        <peripheral name="ethernet"></peripheral>
+        <peripheral name="pwm"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="industrial"></category>
+        <category name="motor_control"></category>
+        <category name="networking"></category>
+    </categories>
+</data:item>
