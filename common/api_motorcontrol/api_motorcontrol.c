@@ -1,8 +1,10 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2021-2023 NXP
+ * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+
 #include "api_motorcontrol.h"
 #include "multicore.h"
 #include "fsl_rgpio.h"
@@ -10,7 +12,7 @@
 
 
 SHARED_MEMORY_IN_CORES volatile static mc_motor_command_t sMotorCommandSHM[2];    //define the command data from CM33 to CM7
-SHARED_MEMORY_IN_CORES volatile static mc_motor_status_t  sMotorStatusSHM[2];     //define the status data from CM7 to CM3
+SHARED_MEMORY_IN_CORES volatile  mc_motor_status_t  sMotorStatusSHM[2];     //define the status data from CM7 to CM3
 /*
  *  Set status and get command functions
  * */
@@ -52,6 +54,7 @@ void MC_SetMotorStatusFromISR(mc_motor_status_t *ptrM1, mc_motor_status_t *ptrM2
  */
 static void MC_GetMotorCommand_fromSHM(void *ptr)
 {
+	g_sM1Cmd.u32SyncLoopCycle = sMotorCommandSHM[0].u32SyncLoopCycle;
 	g_sM1Cmd.ui16MUPospeSensor= sMotorCommandSHM[0].ui16MUPospeSensor;
 	g_sM1Cmd.eAppSwitch = sMotorCommandSHM[0].eAppSwitch;
 	g_sM1Cmd.eControlMethodSel = sMotorCommandSHM[0].eControlMethodSel;
@@ -256,7 +259,7 @@ RAM_FUNC_CRITICAL static void MC_GetMotorStatus_fromSHM(void *ptr)
 	g_sM2Status.g_eM1StateRun = sMotorStatusSHM[1].g_eM1StateRun;
 	g_sM2Status.eControlMethodSel = sMotorStatusSHM[1].eControlMethodSel;
 
-	FMSTR_Recorder(0);
+//	FMSTR_Recorder(0);
 }
 
 volatile uint16_t ui16SlaveReady = 0U;

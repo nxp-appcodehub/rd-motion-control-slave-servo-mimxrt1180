@@ -1,8 +1,10 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2021-2023 NXP
+ * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+
 
 #ifndef API_MOTORCONTROL_H_
 #define API_MOTORCONTROL_H_
@@ -187,7 +189,7 @@ typedef struct _mc_motor_command
             bool                bIsRandomPosition;         /*!< Indicates that the position is not on a trajectory and may need filtering */
         } sPosParam;
     } uSpeed_pos;
-
+    uint32_t u32SyncLoopCycle;
 } mc_motor_command_t;
 
 /*!

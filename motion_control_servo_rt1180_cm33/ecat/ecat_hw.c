@@ -24,7 +24,7 @@
 UINT32 EcatTimerCnt;
 extern bool bM1CmdUpdateFlag,bM2CmdUpdateFlag;
 extern mc_motor_command_t sM1Cmd, sM2Cmd;
-#define ECAT_SYNC_FREQ 1000
+#define ECAT_SYNC_FREQ 8000
 static void Ecat_KickOff(void)
 {
     BLK_CTRL_WAKEUPMIX->ECAT_MISC_CFG |= BLK_CTRL_WAKEUPMIX_ECAT_MISC_CFG_RMII_REF_CLK_DIR0_MASK |
@@ -170,10 +170,15 @@ UINT16 HW_Init(void)
 	//servo_motor_init();
     return 0;
 }
-
+uint32_t ui32PDICycleTime;
 void ECAT_INT_IRQHandler(void)
 {
+
+	uint32_t ui32Temp1, ui32Temp2;
+	SYSTICK_STOP_COUNT(ui32Temp1);
     PDI_Isr();
+	SYSTICK_STOP_COUNT(ui32Temp2);
+	ui32PDICycleTime = ui32Temp2 - ui32Temp1;
 
     SDK_ISR_EXIT_BARRIER;
 }
@@ -182,7 +187,7 @@ uint32_t ui32SyncCycleTime;
 /*config Sync0/1 IRQ*/
 void XBAR1_CH0_CH1_IRQHandler(void)
 {
-	SYSTICK_STOP_COUNT(ui32SyncCycleTime);
+
     SYSTICK_START_COUNT();
 
     bool status;
@@ -199,11 +204,11 @@ void XBAR1_CH0_CH1_IRQHandler(void)
         XBAR_ClearOutputStatusFlag(kXBAR1_OutputDma4MuxReq155);
         Sync1_Isr();
     }
+	SYSTICK_STOP_COUNT(ui32SyncCycleTime);
     if (++ui16CntSync >= (uint16_t)(ECAT_SYNC_FREQ))
     {
     	ui16CntSync = 0;
         RGPIO_TogglePinsOutput(BOARD_INITPINS_USER_LED2_GPIO, BOARD_INITPINS_USER_LED2_GPIO_PIN_MASK);
-
     }
     SDK_ISR_EXIT_BARRIER;
 }
