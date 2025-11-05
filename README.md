@@ -24,19 +24,23 @@ The reference design includes two projects, the master project and the slave pro
 6. [Release Notes](#step6)
 
 ## 1. Software<a name="step1"></a>
-- [MCUXpresso IDE:11.8.1](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE) 
-- [SDK for EVK-MIMXRT1180: 2.16.0](https://mcuxpresso.nxp.com/en/builder?hw=MIMXRT1180-EVK) 
-- Download the code from Git repository: TBD. 
+- [MCUXpresso IDE](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE) 
+- [SDK for EVK-MIMXRT1180](https://mcuxpresso.nxp.com/en/builder?hw=MIMXRT1180-EVK) 
+
+- [Download the code from Git repository ](https://github.com/nxp-appcodehub/rd-motion-control-slave-servo-mimxrt1180/tree/main). 
+- [Freemaster 3.2](https://www.nxp.com.cn/design/design-center/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER)
 
 ## 2. Hardware<a name="step2"></a>
 - Personal Computer
 - NET Cable and 24V adaptor.
-- XSERVO-MTR-DRV Board and [MIMXRT1180-EVK]()
-- J-Link Debugger (v7.88e)
+- XSERVO-MTR-DRV Board and [MIMXRT1180-EVK](https://www.nxp.com.cn/products/i.MX-RT1180)
+- J-Link Debugger ([v7.88e](https://www.segger.com/downloads/jlink/))
 
 ## 3. Setup<a name="step3"></a>
 
 ### 3.1 Step 1
+#### Slave Project
+**If you have download the project, please see the next section.**
 1. Open MCUXpresso IDE, in the Quick Start Panel, choose **Import from Application Code Hub**
 
    ![](images/import_project_1.png)
@@ -53,8 +57,25 @@ The reference design includes two projects, the master project and the slave pro
 
    ![](images/build_project.png)
 
+####   If you have download this project:
+1. Click **file** to import the project.
+
+   ![](images/import_project_5.png)
+
+2. Follow the steps below to import 'motion_control_servo_rt1180_cm33' project.
+
+   ![](images/import_project_6.png)
+3. Same as step 2, import 'motion_control_servo_rt1180_cm7' project.
+#### Master Project
+1. Import the ‘evkmimxrt1180_soem_servo_motor_cm33’ project.
+ ![](images/import_project_8.png)
+
+2. Manually apply the changes listed in the file `rd-motion-control-slave-servo-mimxrt1180\changes.diff` to the project that has already been imported.
+
+
 ### 3.2 Step 2
 #### MIMXRT-1180-EVK RevC board set up
+**If you just don't want to use SOEM, please see the next section.**
 ![](./images/Board1.jpg)
 1. 5V supply via J2 (JP1 pin1 and pin2 are connected using a jumper).  
 
@@ -65,7 +86,6 @@ The reference design includes two projects, the master project and the slave pro
 4. Choose the SDP mode.(SW5->off-off-off-on).
 
 5. Build motion_control_master_soem project（**Debug build**） and download the project to the board(JP5 need be connected with jumper).
-**Note:** This project **CAN NOT** be built directly. CMSIS related files are missing in the project, users need to manually copy the files from (..\ [motion_control_servo_rt1180_cm33]()\CMSIS\..)  to (..\evkmimxrt1180_soem_servo_motor_bm_cm33\CMSIS\..).
 
 6. Choose the Flashboot mode.(SW5->off-on-off-off).
 
@@ -83,9 +103,14 @@ The reference design includes two projects, the master project and the slave pro
 
 4. Choose the SDP mode.(SW2->off-off-off-on).
 
-5. Build 'motion_control_servo_rt1180_cm7' project first（**Release build**）.
+5. Build 'motion_control_servo_rt1180_cm7' project first（**Release build**）.(Right click the project and perform the following operations)
+![](./images/Board5.png)
 
-6. Build 'motion_control_servo_rt1180_cm33'project（**Release build**）.Download the project to the board.
+6. Build 'motion_control_servo_rt1180_cm33'project（**Release build**）.(same as step 5)
+7. To import the downloaded SDK file, just drag the compressed package into the specified project, as shown below:
+![](images/import_project_7.png)
+7. Download the project to the board.
+
 **Note:** This project **CAN NOT** be built directly. Please see the below.Details can be found in chapters 4 to 6.3 of the document in the path '\rd-motion-control-imxrt1180\motion_control_servo_rt1180_cm33\docs'.
 
 ##### Prepare the Demo
@@ -127,7 +152,7 @@ The reference design includes two projects, the master project and the slave pro
 
 7. Choose the Flashboot mode.(SW2->off-on-off-off).
 
-8. Reset borad.LED1 will light up every 1s.
+8. Reset borad through SW6.LED1 will light up every 1s.
 
 9. Connect the power and encoder port of the motor1&2.
 
@@ -157,19 +182,41 @@ The reference design includes two projects, the master project and the slave pro
 ![](./images/Demo2.jpg)
 
 2. Install the four motors onto the slide and tighten the couplings.
+![](./images/Board11.png)
 
 3. Docking the M2 gears on both boards together as shown above.
+
+4. Rotate the motor couplings on both sides to turn the position of the two motors in the center to the position, the two motors are docked in the center. At the same time, adjust the relative positions of the two motors according to the figure below.
+![](./images/Board12.png)
 
 4. 24V power up for slave board.
 
 5. 5V power up for master board.
+
+#### Only debug motor
+1. Open C:\Users\nxf87476\Desktop\MotionControl\motion_control_servo_rt1180\motion_control_servo_rt1180_cm7\source\motor_control_task.c file.
+2. Change the macro **DEBUGMOTOR** form 0 to 1.
+![](./images/Board6.png)
+3. Bulid project and download the image.
+4. Connect the J17 USB cable, which used for freemaster.
+5. Open the freemaster file in ...\motion_control_servo_rt1180\motion_control_servo_rt1180_cm7\freemaster_exe\pmsm_demo_QUAD_release.pmp.
+![](./images/Board7.png)
+6. Click **run** .
+![](./images/Board8.png)
+7. Open the Position Controller window.
+![](./images/Board9.png)
+8. Select Position Ctrl Mode.
+![](./images/Board13.png)
+9. Change the Switch from off to on.
+![](./images/Board14.png)
+10. Enter you target position in **M1 Position Cmd Required**.
 
 
 ## 4. Results<a name="step4"></a>
 Connect a USB cable between the host PC and the OpenSDA USB port on the Master board.Open a serial terminal with the following settings
 	- 115200 baud rate
 	- 8 data bits
- 	- No parity
+	- No parity
 	- One stop bit
 	- No flow control
 The log below shows the output of this demo in the terminal window:
@@ -188,18 +235,18 @@ ec_config_init 0
 ec_config_map_group IOmap:20001214 group:0
  >Slave 1, configadr 1001, state  2
   CoE Osize:192 Isize:192
-     ISIZE:192 192 OSIZE:192
+	 ISIZE:192 192 OSIZE:192
   SM programming
-    SM2 Type:3 StartAddr:1100 Flags:   10064
-    SM3 Type:4 StartAddr:1400 Flags:   10020
+	SM2 Type:3 StartAddr:1100 Flags:   10064
+	SM3 Type:4 StartAddr:1400 Flags:   10020
   OUTPUT MAPPING
-    FMMU 0
-      SM2
-    slave 1 Outputs 20001214 startbit 0
+	FMMU 0
+	  SM2
+	slave 1 Outputs 20001214 startbit 0
  =Slave 1, INPUT MAPPING
-    FMMU 1
-      SM3
-    Inputs 2000122C startbit 0
+	FMMU 1
+	  SM3
+	Inputs 2000122C startbit 0
 IOmapSize 48
 Slaves mapped, state to SAFE_OP.
 segments : 1 : 48 0 0 0

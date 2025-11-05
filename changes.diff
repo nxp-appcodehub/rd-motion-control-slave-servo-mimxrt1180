@@ -1,0 +1,134 @@
+diff --git a/evkmimxrt1180_soem_servo_motor_cm33/soem/soem/ethercatcoe.c b/evkmimxrt1180_soem_servo_motor_cm33/soem/soem/ethercatcoe.c
+index 72585bb..7ac7a8a 100644
+--- a/evkmimxrt1180_soem_servo_motor_cm33/soem/soem/ethercatcoe.c
++++ b/evkmimxrt1180_soem_servo_motor_cm33/soem/soem/ethercatcoe.c
+@@ -864,7 +864,8 @@ int ecx_readPDOmap(ecx_contextt *context, uint16 Slave, uint32 *Osize, uint32 *I
+             if ((tSM == 3) || (tSM == 4))
+             {
+                /* read the assign PDO */
+-               Tsize = ecx_readPDOassign(context, Slave, ECT_SDO_PDOASSIGN + iSM );
++//               Tsize = ecx_readPDOassign(context, Slave, ECT_SDO_PDOASSIGN + iSM );
++            	 Tsize = 192;
+                /* if a mapping is found */
+                if (Tsize)
+                {
+@@ -959,8 +960,9 @@ int ecx_readPDOmapCA(ecx_contextt *context, uint16 Slave, int Thread_n, uint32 *
+          if ((tSM == 3) || (tSM == 4))
+          {
+             /* read the assign PDO */
+-            Tsize = ecx_readPDOassignCA(context, Slave, Thread_n,
+-                  ECT_SDO_PDOASSIGN + iSM );
++//            Tsize = ecx_readPDOassignCA(context, Slave, Thread_n,
++//                  ECT_SDO_PDOASSIGN + iSM );
++       	    Tsize = 192;
+             /* if a mapping is found */
+             if (Tsize)
+             {
+diff --git a/evkmimxrt1180_soem_servo_motor_cm33/source/axis_nc.h b/evkmimxrt1180_soem_servo_motor_cm33/source/axis_nc.h
+index f1c90c8..918f60d 100644
+--- a/evkmimxrt1180_soem_servo_motor_cm33/source/axis_nc.h
++++ b/evkmimxrt1180_soem_servo_motor_cm33/source/axis_nc.h
+@@ -10,7 +10,7 @@
+ #include <string.h>
+ #include <inttypes.h>
+ 
+-#define TRAJECTORY_PLANNER_MAX  9
++#define TRAJECTORY_PLANNER_MAX  27
+ #define NSEC_PER_SEC (1000000000)
+ #define timespec_add(a, b, result)                          \
+     do {                                                      \
+diff --git a/evkmimxrt1180_soem_servo_motor_cm33/source/cia402.c b/evkmimxrt1180_soem_servo_motor_cm33/source/cia402.c
+index 652fbc8..6bd793c 100644
+--- a/evkmimxrt1180_soem_servo_motor_cm33/source/cia402.c
++++ b/evkmimxrt1180_soem_servo_motor_cm33/source/cia402.c
+@@ -34,20 +34,23 @@ uint32_t rx_pdo_entry[1][4] = {
+ int servo_pdo_activate_map(struct servo_t *servo)
+ {
+ 	int slave = servo->slave_id + 1;
+-	uint16 map_1c12[2] = {0x0001, 0x1600};
+-	uint16 map_1c13[2] = {0x0001, 0x1a00};
++	uint16 map_1c12[3] = {0x0002, 0x1600, 0x1610};
++	uint16 map_1c13[3] = {0x0002, 0x1a00, 0x1a10};
+ 	uint8_t map_6060 = 8;
+-	uint16 num_16b = 0;
+ 
++	uint16 num_16b = 0;
++	uint16 num_8b = 0;
+ 	ec_SDOwrite(slave, 0x1c12, 0x00, 0, 2, &num_16b, EC_TIMEOUTSAFE);
+ 	ec_SDOwrite(slave, 0x1c13, 0x00, 0, 2, &num_16b, EC_TIMEOUTSAFE);
+-	
++
++	ec_SDOwrite(slave, 0x1c12, 0x02, 0, sizeof(map_1c12[2]), &map_1c12[2], EC_TIMEOUTSAFE);
+ 	ec_SDOwrite(slave, 0x1c12, 0x01, 0, sizeof(map_1c12[1]), &map_1c12[1], EC_TIMEOUTSAFE);
+ 	ec_SDOwrite(slave, 0x1c12, 0x00, 0, sizeof(map_1c12[0]), &map_1c12[0], EC_TIMEOUTSAFE);
+ 
++	ec_SDOwrite(slave, 0x1c13, 0x02, 0, sizeof(map_1c13[2]), &map_1c13[2], EC_TIMEOUTSAFE);
+ 	ec_SDOwrite(slave, 0x1c13, 0x01, 0, sizeof(map_1c13[1]), &map_1c13[1], EC_TIMEOUTSAFE);
+ 	ec_SDOwrite(slave, 0x1c13, 0x00, 0, sizeof(map_1c13[0]), &map_1c13[0], EC_TIMEOUTSAFE);
+-	
++
+ 	ec_SDOwrite(slave, 0x6060, 0x00, 0, 1, &map_6060, EC_TIMEOUTSAFE);
+ 	return 0;
+ }
+diff --git a/evkmimxrt1180_soem_servo_motor_cm33/source/soem_servo_motor.c b/evkmimxrt1180_soem_servo_motor_cm33/source/soem_servo_motor.c
+index 0f21203..218e793 100644
+--- a/evkmimxrt1180_soem_servo_motor_cm33/source/soem_servo_motor.c
++++ b/evkmimxrt1180_soem_servo_motor_cm33/source/soem_servo_motor.c
+@@ -52,7 +52,7 @@
+ #define nxp_ProductID 0x00000002
+ 
+ #define MAX_SERVO 2
+-#define MAX_AXIS 2
++#define MAX_AXIS 4
+ 
+ #ifndef PHY_STABILITY_DELAY_US
+ #define PHY_STABILITY_DELAY_US (500000U)
+@@ -117,13 +117,11 @@ static netc_tx_frame_info_t g_txDirty[EP_RING_NUM][EP_TXBD_NUM];
+ 
+ static char IOmap[1500];
+ 
+-static char *tp[MAX_SERVO] = {
+-
+-// DELTA
+-"Cyclic=1; Scale=46603; Bias=0; Accel=8; Decel=8; Max_speed=3600; TpArrays=[(0:2000),(270:1000),(270:2000),(180:1000),(180:2000),(0:1000),(0:2000),(0:1000)];",
+-
+-// INOVANCE
+-"Cyclic=1; Scale=186414; Bias=0; Accel=8; Decel=8; Max_speed=3600; TpArrays=[(0:2000),(270:1000),(270:2000),(180:1000),(180:2000),(0:1000),(0:2000),(0:1000)];",
++static char *tp[MAX_AXIS] = {
++"Cyclic=1; Scale=182; Bias=0; Accel=8; Decel=8; Max_speed=12600; TpArrays=[(0:3000),(3600:1000),(7200:1000),(720:500),(10800:1800),(720:2000),(7200:1000),(10800:2000),(7200:2000),(0:2000),(3600:2000),(3600:2000),(0:1000),(0:2000)];",//slave_1  corp with 4
++"Cyclic=1; Scale=182; Bias=0; Accel=8; Decel=8; Max_speed=12600; TpArrays=[(0:3000),(360:1000),(1080:1000),(200:500),(0:1000),(360:800),(0:1000),(0:1000),(-360:1000),(0:2000),(1800:2000),(2880:2000),(1800:2000),(180:2000),(0:1000),(0:2000)];",//slave_5  corp with 8
++"Cyclic=1; Scale=182; Bias=0; Accel=8; Decel=8; Max_speed=12600; TpArrays=[(0:3000),(-3600:1000),(-1080:1000),(-720:500),(-10800:1800),(-720:2000),(-7200:1000),(-10800:2000),(-7200:2000),(-3600:2000),(-1800:2000),(-3600:2000),(0:1000),(0:2000)];",//slave_1  corp with 4
++"Cyclic=1; Scale=182; Bias=0; Accel=8; Decel=8; Max_speed=12600; TpArrays=[(0:3000),(360:1000),(1080:1000),(200:500),(0:1000),(-360:800),(0:1000),(0:1000),(360:1000),(0:2000),(1800:2000),(2880:2000),(1800:2000),(180:2000),(0:1000),(0:2000)];",//slave_5  corp with 8
+ 
+ };
+ 
+@@ -170,22 +168,17 @@ static void EtherCAT_servo_init(struct servo_t *svo, struct axis_t *ax)
+ 	memset(ax, 0, sizeof(struct axis_t) * MAX_AXIS);
+ 	for (i = 0; i < MAX_SERVO; i++) {
+ 		svo[i].slave_id = i;
+-		svo[i].axis_num = 1;
++		svo[i].axis_num = 2;
+ 	}
+ 	
+-	for (i = 0; i < 1; i++) {
+-		svo[i].VendorId = asda_b3_VendorId;
+-		svo[i].ProductID = asda_b3_ProductID;
+-	}
+-
+-    for (i = 1; i < 2; i++) {
+-		svo[i].VendorId = sv680_VendorId;
+-		svo[i].ProductID = sv680_ProductID;
++	for (i = 0; i < MAX_SERVO; i++) {
++		svo[i].VendorId = nxp_VendorId;
++		svo[i].ProductID = nxp_ProductID;
+ 	}
+ 
+-	for (i = 0; i < MAX_SERVO; i++) {
+-		ax[i].servo = svo + i;
+-		ax[i].axis_offset = 0;
++	for (i = 0; i < MAX_AXIS; i++) {
++		ax[i].servo = svo + (i/2);
++		ax[i].axis_offset = i%2;
+ 	}
+ }
+ 
