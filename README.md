@@ -113,6 +113,19 @@ The reference design includes two projects, the master project and the slave pro
 
 **Note:** This project **CAN NOT** be built directly. Please see the below.Details can be found in chapters 4 to 6.3 of the document in the path '\rd-motion-control-imxrt1180\motion_control_servo_rt1180_cm33\docs'.
 
+**Please use the patch file in the project (..\motion_control_servo_rt1180_cm33\ecat\SSC\MotionControl.patch).**
+
+**（1）** Download the patch.exe and Unix2Dos.exe tools.
+
+**（2）** Use the Unix2Dos.exe tool to convert the patch file format.
+![](./images/patch1.jpg)
+![](./images/patch2.jpg)
+
+
+**（3）** Apply patch by using the command.
+![](./images/patch3.jpg)
+![](./images/patch4.jpg)
+![](./images/patch5.jpg)
 ##### Prepare the Demo
 ```
 1. Generate the SSC source code
